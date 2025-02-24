@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-const socket = new WebSocket("ws://localhost:8080");
+const socket = new WebSocket("wss://backend-ewas.onrender.com"); 
 
 let playerRole = null;
 let playerScore = 0;
