@@ -259,3 +259,64 @@ h1 {
 .hidden {
     display: none;
 }
+.music-toggle {
+    position: absolute;
+    bottom: 1px;
+    left: 95%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.music-label {
+    font-size: 1.2rem;
+    text-shadow: 0 0 5px cyan;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px; /* 60px se chhota kiya */
+    height: 20px; /* 34px se chhota kiya */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, #ff0080, #8000ff);
+    transition: 0.4s;
+    border-radius: 20px; /* Height ke hisaab se rounded */
+    box-shadow: 0 0 5px rgba(255, 0, 128, 0.6); /* Thoda chhota shadow */
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px; /* 26px se chhota kiya */
+    width: 16px; /* 26px se chhota kiya */
+    left: 2px; /* 4px se adjust kiya */
+    bottom: 2px; /* 4px se adjust kiya */
+    background: white;
+    transition: 0.4s;
+    border-radius: 50%;
+    box-shadow: 0 0 3px cyan; /* Thoda chhota shadow */
+}
+
+input:checked + .slider {
+    background: linear-gradient(45deg, #00ffcc, #0080ff);
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px); /* 26px se adjust kiya (width - knob size) */
+}

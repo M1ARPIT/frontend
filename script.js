@@ -69,6 +69,15 @@ socket.onmessage = (event) => {
         resetGame();
     }
 };
+const backgroundMusic = new Audio("sound/gamesound.mp3");
+backgroundMusic.loop = true;
+document.body.addEventListener("click", () => backgroundMusic.play(), { once: true });
+
+window.toggleMusic = () => {
+    if (backgroundMusic.paused) backgroundMusic.play();
+    else backgroundMusic.pause();
+};
+
 function loadSound(url) {
     const audio = new Audio(url);
     console.log(`Loading sound: ${url}`);
