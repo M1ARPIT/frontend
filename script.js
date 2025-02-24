@@ -133,8 +133,13 @@ window.joinFriendGame = () => {
     if (roomId) socket.send(JSON.stringify({ type: "JOIN_ROOM", roomId }));
 };
 window.findStranger = () => {
-    showLoadingPopup("🔍 Finding a Stranger...");
-    socket.send(JSON.stringify({ type: "FIND_STRANGER" }));
+    if (socket.readyState === WebSocket.OPEN) {
+        showLoadingPopup("🔍 Finding a Stranger...");
+        socket.send(JSON.stringify({ type: "FIND_STRANGER" }));
+    } else {
+        console.error("WebSocket is not open yet. Retrying...");
+        setTimeout(window.findStranger, 500); // Retry after 500ms
+    }
 };
 
 // **Loading Popup Functions**
