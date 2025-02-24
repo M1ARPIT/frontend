@@ -331,7 +331,6 @@ function showEndPopup(message) {
             <p>${scoreText}</p>
             <div class="popup-buttons">
                 <button class="menu-btn" onclick="goToMenu()">🏠 Main Menu</button>
-                <button class="menu-btn" onclick="retryGame()">🔄 Retry</button>
             </div>
         </div>
     `;
