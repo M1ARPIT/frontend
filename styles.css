@@ -1,0 +1,261 @@
+/* Futuristic Sci-Fi Themed CSS */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: url('assets/3985.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+#menu, #game, #ai-game {
+    background: rgba(124, 76, 76, 0.8);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px cyan;
+    width: 90%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 3rem;
+    text-shadow: 0 0 10px cyan;
+    margin-bottom: 20px;
+}
+
+.menu-btn, .move-btn {
+    display: block;
+    width: 100%;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.menu-btn {
+    background: linear-gradient(45deg, #ff0080, #8000ff);
+    box-shadow: 0px 5px 15px rgba(255, 0, 128, 0.6);
+    color: white;
+}
+
+.menu-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 30px rgba(255, 0, 128, 1);
+}
+
+.move-btn {
+    background: linear-gradient(45deg, #00ffcc, #0080ff);
+    box-shadow: 0px 5px 15px rgba(0, 255, 204, 0.6);
+    color: white;
+}
+
+.move-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 30px rgba(0, 255, 204, 1);
+}
+
+#score, #your-move, #opponent-move, #waitingMessage {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    text-shadow: 0px 0px 10px rgb(0, 0, 0);
+    font-weight: bold;
+}
+
+/* Popup Container (Room Creation) */
+.popup-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-container h2 {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px cyan;
+}
+
+.room-id {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffea00;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.popup-buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.copy-btn {
+    background: #00ff99;
+    color: black;
+}
+
+.copy-btn:hover {
+    background: #00cc77;
+}
+
+.close-btn {
+    background: #ff4c4c;
+    color: white;
+}
+
+.close-btn:hover {
+    background: #cc3333;
+}
+
+/* General Popup Overlay (Loading, Round, Result, End) */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-overlay .popup {
+    background: rgba(124, 76, 76, 0.9); /* Matches your main container */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px cyan;
+    color: #fff;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+}
+
+/* Spinner for Loading Popup */
+.spinner {
+    margin-top: 10px;
+    width: 40px;
+    height: 40px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid cyan;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Round and Result Popups */
+.round-popup .popup {
+    background: rgba(0, 0, 0, 0.9);
+    border: 2px solid cyan;
+    padding: 15px;
+    font-size: 1.5em;
+    text-shadow: 0 0 5px cyan;
+}
+
+/* Enhanced End Popup */
+.end-popup .popup {
+    background: rgba(0, 0, 0, 0.9);
+    border: 3px solid cyan;
+    padding: 30px;
+    width: 90%;
+    max-width: 500px;
+}
+
+.end-popup .popup h2 {
+    font-size: 2.5em;
+    text-shadow: 0 0 10px cyan;
+    margin-bottom: 15px;
+}
+
+.end-popup .popup p {
+    font-size: 1.3em;
+    text-shadow: 0 0 5px cyan;
+    margin-bottom: 20px;
+}
+
+.end-popup .win {
+    background: linear-gradient(45deg, #00ffcc, #0080ff); /* Victory gradient */
+    border-color: #00ffcc;
+}
+
+.end-popup .lose {
+    background: linear-gradient(45deg, #ff4c4c, #800000); /* Defeat gradient */
+    border-color: #ff4c4c;
+}
+
+.end-popup .draw {
+    background: linear-gradient(45deg, #ffea00, #666600); /* Draw gradient */
+    border-color: #ffea00;
+}
+
+.end-popup .disconnect {
+    background: linear-gradient(45deg, #ff9900, #663300); /* Disconnect gradient */
+    border-color: #ff9900;
+}
+
+.end-popup .popup-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.end-popup .menu-btn {
+    background: linear-gradient(45deg, #ff0080, #8000ff);
+    padding: 12px 20px;
+    font-size: 1.2em;
+}
+
+.end-popup .menu-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 10px 20px rgba(255, 0, 128, 0.8);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.hidden {
+    display: none;
+}
